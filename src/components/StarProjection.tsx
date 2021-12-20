@@ -12,6 +12,7 @@ import Star, { StarProjection } from "../star"
 import { convertAllEquatorial, getLocalGeographic } from "../util"
 
 import HYGDatabase from "../hyg-database.json"
+import useWindowWidth from "../useWindowWidth"
 
 export type ProjectionMapType = "RandomMap" | "CelestialMap" | "GroundMap"
 
@@ -36,6 +37,7 @@ export const Projection: React.FC<IProjectionProps> = ({
   ...props
 }) => {
   const refs = useRef<any>([])
+  const windowWidth = useWindowWidth(200)
   const [stars, setStars] = useState<Star[]>([])
   const [starProjections, setStarProjections] = useState<StarProjection[]>([])
 
@@ -65,7 +67,7 @@ export const Projection: React.FC<IProjectionProps> = ({
       default:
         throw new Error("INVALID_PROJ_MODE")
     }
-  }, [stars])
+  }, [stars, windowWidth])
 
   useEffect(() => {
     if (!refs.current || anim === false) {
