@@ -1,7 +1,7 @@
 {
-  "name": "y",
+  "name": "bhnb-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "React / Canvas implementation for projecting celestial object",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
